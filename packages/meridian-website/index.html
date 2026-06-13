@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DownAI — Code Editor for Mac & Windows</title>
+  <meta name="description" content="DownAI is a native code editor for Mac and Windows. Monaco, projects, git, terminal — Pro unlocks chat and advanced tools." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="canonical" href="https://downai.dev/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DownAI — The editor for deeply focused work" />
+  <meta property="og:description" content="Native Mac & Windows code editor. Free download. Pro unlocks chat, terminal, and git." />
+  <meta property="og:url" content="https://downai.dev/" />
+  <meta property="og:site_name" content="DownAI" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DownAI — Code Editor" />
+  <meta name="twitter:description" content="Native Mac & Windows code editor. Free download. Pro unlocks chat, terminal, and git." />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient-orb ambient-orb-a"></div>
+    <div class="ambient-orb ambient-orb-b"></div>
+  </div>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="/logo.svg" alt="" width="28" height="28" />
+        <span>DownAI</span>
+      </a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#demo">Product</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#features">Features</a>
+        <a href="#prompt-lab">Prompt Lab</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#download">Download</a>
+      </div>
+      <div class="nav-actions">
+        <a href="#pricing" class="nav-link">Get Pro</a>
+        <a href="#download" class="nav-cta">Download</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-badge hero-in hero-in-1">
+        <span class="hero-badge-dot"></span>
+        Native desktop · Mac &amp; Windows
+      </p>
+      <h1 class="hero-in hero-in-2">
+        The editor for<br />
+        <span class="hero-serif">deeply focused</span> work.
+      </h1>
+      <p class="hero-lead hero-in hero-in-3">
+        DownAI is a fast, native code editor with Monaco, git, split views, and Prompt Lab.
+        Upgrade to Pro for chat, terminal, and hosted AI — no API key required.
+      </p>
+      <div class="hero-downloads hero-in hero-in-4" id="hero-downloads">
+        <a href="https://downai.vercel.app/downloads/DownAI-Setup-1.0.0.exe" class="dl-btn dl-btn-primary" data-os="windows" download="DownAI-Setup-1.0.0.exe">
+          <svg class="dl-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5h7.5V12H3V5.5zm8.5 0H21V12h-9.5V5.5zM3 13.5h7.5V20H3v-6.5zm8.5 0H21V20h-9.5v-6.5z"/></svg>
+          <span><strong>Download for Windows</strong><small>Windows 10/11 · 64-bit</small></span>
+        </a>
+        <a href="#" class="dl-btn dl-btn-secondary unavailable" data-os="mac" aria-disabled="true">
+          <svg class="dl-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+          <span><strong>Download for macOS</strong><small>macOS 11+ · Apple Silicon & Intel</small></span>
+        </a>
+      </div>
+      <p class="hero-note hero-in hero-in-5">Free to download · Pro from $19/mo · No account required</p>
+      <div class="hero-trust hero-in hero-in-6">
+        <span>Monaco editing</span>
+        <span class="hero-trust-sep">·</span>
+        <span>Offline-ready</span>
+        <span class="hero-trust-sep">·</span>
+        <span>Instant setup</span>
+      </div>
+    </div>
+  </header>
+
+  <section id="demo" class="section demo-section demo-section-premium">
+    <div class="container">
+      <div class="demo-header reveal">
+        <p class="section-label">Product</p>
+        <h2>See DownAI in action</h2>
+        <p class="section-lead">Explore the interface — switch panels, open files, and preview what Pro unlocks.</p>
+        <div class="demo-mode-toggle">
+          <button type="button" class="mode-pill active" data-plan="free">Preview as Free</button>
+          <button type="button" class="mode-pill" data-plan="pro">Preview as Pro</button>
+        </div>
+      </div>
+
+      <div class="demo-app reveal reveal-blur reveal-delay-2" id="demo-app">
+        <div class="demo-titlebar">
+          <div class="demo-dots"><span></span><span></span><span></span></div>
+          <span class="demo-title">downai — my-project</span>
+        </div>
+        <div class="demo-layout">
+          <div class="demo-activity">
+            <button type="button" class="demo-act active" data-view="explorer" title="Explorer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+            </button>
+            <button type="button" class="demo-act" data-view="search" title="Search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            </button>
+            <button type="button" class="demo-act" data-view="git" title="Git">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 8v8M8 6h5a2 2 0 012 2v2"/></svg>
+            </button>
+            <button type="button" class="demo-act demo-act-ai" data-view="ai" title="Chat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </button>
+          </div>
+
+          <aside class="demo-sidebar" id="demo-sidebar">
+            <div class="demo-panel active" data-panel="explorer">
+              <p class="demo-panel-title">Explorer</p>
+              <button type="button" class="demo-file active" data-file="app">App.tsx</button>
+              <button type="button" class="demo-file" data-file="main">main.ts</button>
+              <button type="button" class="demo-file" data-file="styles">styles.css</button>
+              <button type="button" class="demo-file" data-file="readme">README.md</button>
+            </div>
+            <div class="demo-panel" data-panel="search">
+              <p class="demo-panel-title">Search</p>
+              <input class="demo-search" type="text" placeholder="Search in files…" readonly value="useEditorStore" />
+              <button type="button" class="demo-search-hit">store/editorStore.ts · line 42</button>
+            </div>
+            <div class="demo-panel" data-panel="git">
+              <p class="demo-panel-title">Source Control</p>
+              <p class="demo-git-branch">⎇ main · 2 changes</p>
+              <span class="demo-git-file">M App.tsx</span>
+              <span class="demo-git-file">M package.json</span>
+            </div>
+          </aside>
+
+          <div class="demo-center">
+            <div class="demo-tabs" id="demo-tabs">
+              <button type="button" class="demo-tab active" data-file="app">App.tsx</button>
+              <button type="button" class="demo-tab" data-file="main">main.ts</button>
+            </div>
+            <div class="demo-editor" id="demo-editor">
+              <pre class="demo-code active demo-code-live" data-file="app"><code><span class="kw">import</span> { Editor } <span class="kw">from</span> <span class="str">'./Editor'</span>;
+
+<span class="kw">export function</span> <span class="fn">App</span>() {
+  <span class="kw">return</span> (
+    &lt;<span class="tag">Editor</span> theme=<span class="str">"downai"</span> /&gt;
+  );
+}<span class="demo-cursor" aria-hidden="true"></span></code></pre>
+              <pre class="demo-code" data-file="main"><code><span class="kw">import</span> { app } <span class="kw">from</span> <span class="str">'electron'</span>;
+
+app.whenReady().then(() => {
+  createWindow();
+});</code></pre>
+              <pre class="demo-code" data-file="styles"><code><span class="tag">.editor</span> {
+  <span class="prop">background</span>: <span class="str">#181818</span>;
+  <span class="prop">color</span>: <span class="str">#ececec</span>;
+}</code></pre>
+              <pre class="demo-code" data-file="readme"><code><span class="fn"># my-project</span>
+
+Built with DownAI.</code></pre>
+            </div>
+            <div class="demo-bottom">
+              <button type="button" class="demo-bottom-tab active">Terminal</button>
+              <button type="button" class="demo-bottom-tab demo-locked-feature" data-feature="terminal">Output</button>
+              <div class="demo-terminal">
+                <span class="prompt">PS&gt;</span> npm run dev
+                <span class="term-out">DownAI ready on localhost</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="demo-ai hidden" id="demo-ai">
+            <div class="demo-ai-header">
+              <span>Chat</span>
+              <button type="button" class="demo-ai-close" aria-label="Close">×</button>
+            </div>
+            <div class="demo-ai-messages" id="demo-ai-messages">
+              <div class="demo-msg user">Explain this component</div>
+              <div class="demo-msg bot">App wraps the Monaco editor with DownAI theme tokens and keyboard shortcuts.</div>
+            </div>
+            <div class="demo-ai-input-row">
+              <input type="text" class="demo-ai-input" id="demo-ai-input" placeholder="Message…" />
+              <button type="button" class="demo-ai-send" id="demo-ai-send">↑</button>
+            </div>
+          </aside>
+        </div>
+
+        <div class="demo-paywall hidden" id="demo-paywall">
+          <div class="demo-paywall-card">
+            <div class="paywall-icon">🔒</div>
+            <h3>Pro required</h3>
+            <p>This feature is locked on the Free plan. Subscribe to unlock chat, terminal, and git.</p>
+            <a href="#pricing" class="btn btn-primary">View plans</a>
+            <button type="button" class="demo-paywall-dismiss" id="paywall-dismiss">Continue preview</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="workflow" class="section section-alt workflow-section">
+    <div class="container">
+      <p class="section-label reveal">Workflow</p>
+      <h2 class="reveal">From open folder to <span class="headline-muted">shipped code</span></h2>
+      <p class="section-lead reveal">DownAI stays out of your way until you need AI, git, or the terminal.</p>
+      <div class="workflow-track reveal">
+        <div class="workflow-steps stagger-group">
+          <article class="workflow-step stagger-item">
+            <span class="workflow-num">01</span>
+            <div class="workflow-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+            </div>
+            <h3>Open &amp; edit</h3>
+            <p>Open any folder, browse files, split the editor, and write with Monaco — free forever.</p>
+          </article>
+          <div class="workflow-connector" aria-hidden="true"><span></span></div>
+          <article class="workflow-step stagger-item">
+            <span class="workflow-num">02</span>
+            <div class="workflow-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <h3>Ask &amp; refine</h3>
+            <p>Pro unlocks chat with Agent, Ask, and Edit modes plus Ctrl+K inline edits on selection.</p>
+          </article>
+          <div class="workflow-connector" aria-hidden="true"><span></span></div>
+          <article class="workflow-step stagger-item">
+            <span class="workflow-num">03</span>
+            <div class="workflow-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 8v8M8 6h5a2 2 0 012 2v2"/></svg>
+            </div>
+            <h3>Commit &amp; ship</h3>
+            <p>Stage, diff, commit, and run commands in the integrated terminal — all in one window.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-bar reveal" aria-label="Highlights">
+    <div class="container stats-inner">
+      <div class="stat stagger-group">
+        <div class="stat-item stagger-item">
+          <span class="stat-value"><span data-count="50">50</span>+</span>
+          <span class="stat-label">Keyboard shortcuts</span>
+        </div>
+        <div class="stat-item stagger-item">
+          <span class="stat-value"><span data-count="8">8</span></span>
+          <span class="stat-label">Built-in panels</span>
+        </div>
+        <div class="stat-item stagger-item">
+          <span class="stat-value"><span data-count="2">2</span></span>
+          <span class="stat-label">Native platforms</span>
+        </div>
+        <div class="stat-item stagger-item">
+          <span class="stat-value">$<span data-count="19">19</span></span>
+          <span class="stat-label">Pro per month</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="logos reveal" aria-label="Tech stack">
+    <p>Built on the stack you already trust</p>
+    <div class="marquee-wrap">
+      <div class="marquee-track" id="marquee-track">
+        <div class="marquee-group">
+          <span>Monaco</span><span>Electron</span><span>TypeScript</span><span>React</span><span>Vite</span><span>Node.js</span><span>Git</span><span>OpenAI</span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span>Monaco</span><span>Electron</span><span>TypeScript</span><span>React</span><span>Vite</span><span>Node.js</span><span>Git</span><span>OpenAI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="section">
+    <div class="container">
+      <p class="section-label reveal">Features</p>
+      <h2 class="reveal">Everything you need.<br /><span class="headline-muted">Pro when you want more.</span></h2>
+      <div class="feature-grid stagger-group reveal">
+        <article class="feature stagger-item feature-glow">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          </div>
+          <span class="feature-tag free-tag">Free</span>
+          <h3>Monaco editor</h3>
+          <p>Syntax highlighting, tabs, snippets, minimap toggle, and clickable breadcrumbs.</p>
+        </article>
+        <article class="feature stagger-item feature-glow">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18"/></svg>
+          </div>
+          <span class="feature-tag free-tag">Free</span>
+          <h3>Split editor &amp; themes</h3>
+          <p>Side-by-side editing with Ctrl+\, light/dark themes, font size, and zen mode.</p>
+        </article>
+        <article class="feature stagger-item feature-glow">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </div>
+          <span class="feature-tag free-tag">Free</span>
+          <h3>Search &amp; replace</h3>
+          <p>Find across files with regex, case sensitivity, and replace in bulk.</p>
+        </article>
+        <article class="feature stagger-item feature-glow">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+          </div>
+          <span class="feature-tag free-tag">Free</span>
+          <h3>Problems panel</h3>
+          <p>Live diagnostics in the editor with markers and a dedicated problems view.</p>
+        </article>
+        <article class="feature stagger-item feature-glow">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 8v8M8 6h5a2 2 0 012 2v2"/></svg>
+          </div>
+          <span class="feature-tag free-tag">Free</span>
+          <h3>Git &amp; pinned files</h3>
+          <p>Stage, unstage, commit, branch switcher, diff viewer, and pin favorites in the sidebar.</p>
+        </article>
+        <article class="feature stagger-item feature-glow">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <span class="feature-tag locked-tag">Pro</span>
+          <h3>Chat &amp; inline edit</h3>
+          <p>Agent, Ask, and Edit modes with persistent history. Ctrl+K inline edits.</p>
+        </article>
+        <article class="feature stagger-item feature-glow">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M6 12h.01M10 8h8M10 12h8"/></svg>
+          </div>
+          <span class="feature-tag locked-tag">Pro</span>
+          <h3>Integrated terminal</h3>
+          <p>Real shell in your project directory. Included with Pro.</p>
+        </article>
+        <article class="feature stagger-item feature-glow">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.5 2A2.5 2.5 0 0012 4.5v15a2.5 2.5 0 01-5 0M14.5 2A2.5 2.5 0 0117 4.5v15a2.5 2.5 0 01-5 0"/></svg>
+          </div>
+          <span class="feature-tag locked-tag">Pro</span>
+          <h3>Prompt Lab</h3>
+          <p>Generate copy-paste prompts for chat and inline edit — in the app and on the web.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="highlights" class="section section-alt spotlight-section">
+    <div class="container">
+      <p class="section-label reveal">Pro highlights</p>
+      <h2 class="reveal">Power tools, <span class="headline-muted">one keystroke away</span></h2>
+      <div class="spotlight-grid stagger-group reveal">
+        <article class="spotlight-card stagger-item">
+          <div class="spotlight-glow"></div>
+          <span class="spotlight-kbd">Ctrl+Shift+P</span>
+          <h3>Command palette</h3>
+          <p>Jump to files, toggle zen mode, open settings, or run any action without leaving the keyboard.</p>
+        </article>
+        <article class="spotlight-card stagger-item">
+          <div class="spotlight-glow"></div>
+          <span class="spotlight-kbd">Ctrl+K Z</span>
+          <h3>Zen mode</h3>
+          <p>Hide every panel and distraction. Press Esc to return — perfect for deep focus sessions.</p>
+        </article>
+        <article class="spotlight-card stagger-item">
+          <div class="spotlight-glow"></div>
+          <span class="spotlight-kbd">Ctrl+Shift+S</span>
+          <h3>Save As</h3>
+          <p>Duplicate files, create backups, or branch experiments with the native save dialog.</p>
+        </article>
+        <article class="spotlight-card stagger-item">
+          <div class="spotlight-glow"></div>
+          <span class="spotlight-kbd">Git diff</span>
+          <h3>Visual diffs</h3>
+          <p>Review staged and unstaged changes inline before you commit — no context switching.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="shortcuts" class="section shortcuts-section">
+    <div class="container">
+      <p class="section-label reveal">Keyboard-first</p>
+      <h2 class="reveal">Move at the speed of thought</h2>
+      <p class="section-lead reveal">Every action you need — one keystroke away.</p>
+      <div class="shortcuts-grid reveal">
+        <div class="shortcut-card" data-shortcut>
+          <div class="shortcut-keys"><kbd>Ctrl</kbd><span>+</span><kbd>P</kbd></div>
+          <p>Go to file</p>
+        </div>
+        <div class="shortcut-card" data-shortcut>
+          <div class="shortcut-keys"><kbd>Ctrl</kbd><span>+</span><kbd>Shift</kbd><span>+</span><kbd>P</kbd></div>
+          <p>Command palette</p>
+        </div>
+        <div class="shortcut-card" data-shortcut>
+          <div class="shortcut-keys"><kbd>Ctrl</kbd><span>+</span><kbd>K</kbd></div>
+          <p>Inline edit</p>
+        </div>
+        <div class="shortcut-card" data-shortcut>
+          <div class="shortcut-keys"><kbd>Ctrl</kbd><span>+</span><kbd>L</kbd></div>
+          <p>Toggle chat</p>
+        </div>
+        <div class="shortcut-card" data-shortcut>
+          <div class="shortcut-keys"><kbd>Ctrl</kbd><span>+</span><kbd>Shift</kbd><span>+</span><kbd>T</kbd></div>
+          <p>Reopen closed tab</p>
+        </div>
+        <div class="shortcut-card" data-shortcut>
+          <div class="shortcut-keys"><kbd>Ctrl</kbd><span>+</span><kbd>Shift</kbd><span>+</span><kbd>E</kbd></div>
+          <p>Reveal in explorer</p>
+        </div>
+        <div class="shortcut-card" data-shortcut>
+          <div class="shortcut-keys"><kbd>Ctrl</kbd><span>+</span><kbd>\</kbd></div>
+          <p>Split editor</p>
+        </div>
+        <div class="shortcut-card" data-shortcut>
+          <div class="shortcut-keys"><kbd>Ctrl</kbd><span>+</span><kbd>Shift</kbd><span>+</span><kbd>/</kbd></div>
+          <p>Keyboard shortcuts</p>
+        </div>
+        <div class="shortcut-card" data-shortcut>
+          <div class="shortcut-keys"><kbd>Ctrl</kbd><span>+</span><kbd>,</kbd></div>
+          <p>Settings</p>
+        </div>
+        <div class="shortcut-card" data-shortcut>
+          <div class="shortcut-keys"><kbd>Ctrl</kbd><span>+</span><kbd>Shift</kbd><span>+</span><kbd>S</kbd></div>
+          <p>Save As</p>
+        </div>
+        <div class="shortcut-card" data-shortcut>
+          <div class="shortcut-keys"><kbd>Ctrl</kbd><span>+</span><kbd>K</kbd><span> </span><kbd>Z</kbd></div>
+          <p>Zen mode</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prompt-lab" class="section prompt-lab-section">
+    <div class="container">
+      <p class="section-label reveal">Prompt Lab</p>
+      <h2 class="reveal">AI prompts built for DownAI</h2>
+      <p class="section-lead reveal">Describe what you're working on — get copy-paste prompts for chat and inline edit (Ctrl+K).</p>
+
+      <div class="prompt-lab reveal">
+        <form class="prompt-form" id="prompt-form">
+          <label class="prompt-field">
+            <span>What do you want to build or fix?</span>
+            <textarea id="prompt-task" rows="3" placeholder="e.g. Add JWT auth middleware to my Express API with refresh tokens…" required></textarea>
+          </label>
+          <div class="prompt-form-row">
+            <label class="prompt-field">
+              <span>Stack (optional)</span>
+              <input type="text" id="prompt-stack" placeholder="React, TypeScript, Node…" />
+            </label>
+            <label class="prompt-field prompt-field-output">
+              <span>Output</span>
+              <div class="custom-select" id="prompt-mode-select">
+                <input type="hidden" id="prompt-mode" value="both" />
+                <button type="button" class="custom-select-trigger" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="custom-select-label">Chat + inline edit</span>
+                  <svg class="custom-select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="custom-select-menu" role="listbox">
+                  <button type="button" class="custom-select-option active" role="option" data-value="both" data-label="Chat + inline edit">Chat + inline edit</button>
+                  <button type="button" class="custom-select-option" role="option" data-value="chat" data-label="Chat only">Chat only</button>
+                  <button type="button" class="custom-select-option" role="option" data-value="inline" data-label="Inline edit only">Inline edit only</button>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="prompt-chips" id="prompt-chips">
+            <button type="button" class="prompt-chip" data-task="Refactor this component into smaller hooks with clear separation of UI and data fetching">Refactor component</button>
+            <button type="button" class="prompt-chip" data-task="Add unit tests for the selected module with edge cases and mocks">Write tests</button>
+            <button type="button" class="prompt-chip" data-task="Fix performance issues — reduce re-renders and optimize expensive operations">Optimize performance</button>
+            <button type="button" class="prompt-chip" data-task="Review this code for bugs, security issues, and suggest concrete fixes">Code review</button>
+          </div>
+          <button type="submit" class="btn btn-primary" id="prompt-submit">Generate prompts</button>
+          <p class="prompt-usage hidden" id="prompt-usage"></p>
+          <p class="prompt-error hidden" id="prompt-error"></p>
+        </form>
+
+        <div class="prompt-results hidden" id="prompt-results">
+          <div class="prompt-result-card" id="result-chat-wrap">
+            <div class="prompt-result-header">
+              <span class="prompt-result-label">Chat prompt · Ctrl+L</span>
+              <button type="button" class="prompt-copy" data-copy="chat">Copy</button>
+            </div>
+            <pre class="prompt-result-body" id="result-chat"></pre>
+          </div>
+          <div class="prompt-result-card" id="result-inline-wrap">
+            <div class="prompt-result-header">
+              <span class="prompt-result-label">Inline edit · Ctrl+K</span>
+              <button type="button" class="prompt-copy" data-copy="inline">Copy</button>
+            </div>
+            <pre class="prompt-result-body" id="result-inline"></pre>
+          </div>
+          <div class="prompt-result-card prompt-result-tip" id="result-tip-wrap">
+            <div class="prompt-result-header">
+              <span class="prompt-result-label">Context tip</span>
+            </div>
+            <p class="prompt-tip-text" id="result-tip"></p>
+          </div>
+          <div class="prompt-result-card" id="result-follow-wrap">
+            <div class="prompt-result-header">
+              <span class="prompt-result-label">Follow-up</span>
+              <button type="button" class="prompt-copy" data-copy="follow">Copy</button>
+            </div>
+            <pre class="prompt-result-body" id="result-follow"></pre>
+          </div>
+          <p class="prompt-footnote">Paste into DownAI after download. Pro unlocks chat & inline edit in the app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section section-alt">
+    <div class="container">
+      <p class="section-label reveal">Pricing</p>
+      <h2 class="reveal">Simple pricing</h2>
+      <p class="section-lead reveal">Download is free. Chat, terminal, and Pro tooling require an active subscription.</p>
+
+      <div class="pricing-grid pricing-grid-wide stagger-group reveal">
+        <div class="price-card stagger-item">
+          <div class="price-header">
+            <h3>Free</h3>
+            <div class="price">$0</div>
+          </div>
+          <p class="price-desc">Editor only — no Pro features</p>
+          <ul>
+            <li class="no">Chat & inline edit</li>
+            <li class="no">Integrated terminal</li>
+            <li class="no">Git panel</li>
+            <li class="yes">Monaco editor & tabs</li>
+            <li class="yes">Open folders & save</li>
+          </ul>
+          <a href="#download" class="btn btn-ghost btn-block">Download free</a>
+        </div>
+
+        <div class="price-card featured stagger-item">
+          <div class="price-badge">Best value</div>
+          <div class="price-header">
+            <h3>Pro</h3>
+            <div class="price">$19<span>/mo</span></div>
+          </div>
+          <p class="price-desc">Full access — what most developers need</p>
+          <ul>
+            <li class="yes">Unlimited chat</li>
+            <li class="yes">All models (gpt-4o, etc.)</li>
+            <li class="yes">Inline edit & @ context</li>
+            <li class="yes">Terminal + Git panel</li>
+            <li class="yes">Priority support</li>
+          </ul>
+          <a href="https://buy.stripe.com/test_REPLACE_ME" class="btn btn-primary btn-block">Get Pro</a>
+          <p class="price-note">License key emailed instantly</p>
+        </div>
+
+        <div class="price-card stagger-item">
+          <div class="price-header">
+            <h3>Team</h3>
+            <div class="price">$49<span>/mo</span></div>
+          </div>
+          <p class="price-desc">Per seat · 5 seats minimum</p>
+          <ul>
+            <li class="yes">Everything in Pro</li>
+            <li class="yes">Shared billing</li>
+            <li class="yes">Admin license keys</li>
+            <li class="yes">Usage analytics</li>
+            <li class="yes">Slack support</li>
+          </ul>
+          <a href="/contact.html?plan=team" class="btn btn-ghost btn-block">Contact sales</a>
+        </div>
+
+        <div class="price-card stagger-item">
+          <div class="price-header">
+            <h3>Enterprise</h3>
+            <div class="price price-custom">Custom</div>
+          </div>
+          <p class="price-desc">For companies at scale</p>
+          <ul>
+            <li class="yes">SSO & audit logs</li>
+            <li class="yes">Dedicated support</li>
+            <li class="yes">Custom usage limits</li>
+            <li class="yes">On-prem options</li>
+            <li class="yes">SLA</li>
+          </ul>
+          <a href="/contact.html?plan=enterprise" class="btn btn-ghost btn-block">Talk to us</a>
+        </div>
+      </div>
+
+      <p class="pricing-footnote reveal">Pro includes hosted models — no API key required. Cancel anytime.</p>
+
+      <div class="compare-table-wrap reveal">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Free</th>
+              <th class="compare-pro">Pro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Monaco editor & tabs</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+            <tr><td>Open folders & save files</td><td class="yes-cell">✓</td><td class="yes-cell">✓</td></tr>
+            <tr><td>Chat & inline edit</td><td class="no-cell">—</td><td class="yes-cell">✓</td></tr>
+            <tr><td>Integrated terminal</td><td class="no-cell">—</td><td class="yes-cell">✓</td></tr>
+            <tr><td>Git panel</td><td class="no-cell">—</td><td class="yes-cell">✓</td></tr>
+            <tr><td>Hosted AI models</td><td class="no-cell">—</td><td class="yes-cell">✓</td></tr>
+            <tr><td>Priority support</td><td class="no-cell">—</td><td class="yes-cell">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section testimonials-section section-alt">
+    <div class="container">
+      <p class="section-label reveal">Built for builders</p>
+      <h2 class="reveal">What developers are saying</h2>
+      <div class="testimonials-grid stagger-group reveal">
+        <blockquote class="testimonial stagger-item">
+          <p>“Finally a native editor that doesn’t feel like a browser tab. The free tier is genuinely usable.”</p>
+          <footer><strong>Alex M.</strong> · Indie developer</footer>
+        </blockquote>
+        <blockquote class="testimonial stagger-item">
+          <p>“Prompt Lab alone saves me ten minutes every time I sit down to code with AI. Pro pays for itself.”</p>
+          <footer><strong>Jordan K.</strong> · Full-stack engineer</footer>
+        </blockquote>
+        <blockquote class="testimonial stagger-item">
+          <p>“Git staging and split view in a lightweight app — exactly what I wanted outside of VS Code.”</p>
+          <footer><strong>Sam R.</strong> · Startup founder</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="container narrow">
+      <p class="section-label reveal">FAQ</p>
+      <h2 class="reveal">Common questions</h2>
+      <div class="faq-list reveal" id="faq-list">
+        <details class="faq-item">
+          <summary>Is DownAI really free to download?</summary>
+          <p>Yes. Download and use the full Monaco editor, tabs, and project explorer at no cost. Chat, terminal, and git require an active Pro subscription.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I activate Pro after paying?</summary>
+          <p>After checkout you receive a license key by email. Open DownAI → Settings → Plan → Activate license, or press Ctrl+Shift+P and search "Activate License".</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need my own OpenAI API key?</summary>
+          <p>Not on Pro — hosted models are included. Free tier is editor-only; if you add a key in Settings later, local usage stays on your device.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I cancel anytime?</summary>
+          <p>Yes. Cancel in Stripe and your license remains valid until the end of the billing period. No long-term contracts on Pro.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is my code sent to your servers?</summary>
+          <p>Only when you use Pro chat or hosted AI — messages go through our proxy to generate responses. We don't train models on your code. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does DownAI support Save As and split editing?</summary>
+          <p>Yes — both are included in the free editor. Use Ctrl+Shift+S for Save As and Ctrl+\ for split views.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Windows and Mac both supported?</summary>
+          <p>Yes. DownAI runs natively on Windows 10/11 and macOS 11+. Apple Silicon and Intel Mac builds are included in the same installer.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="download" class="section download-section">
+    <div class="container narrow">
+      <p class="section-label reveal">Download</p>
+      <h2 class="reveal">Install DownAI</h2>
+      <p class="section-lead reveal" id="download-version">Version 1.0.0 · Activate your plan after install</p>
+
+      <p class="download-notice hidden" id="download-notice"></p>
+
+      <div class="download-grid reveal">
+        <a href="https://downai.vercel.app/downloads/DownAI-Setup-1.0.0.exe" class="download-card" data-os="windows" download="DownAI-Setup-1.0.0.exe">
+          <div class="download-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5h7.5V12H3V5.5zm8.5 0H21V12h-9.5V5.5zM3 13.5h7.5V20H3v-6.5zm8.5 0H21V20h-9.5v-6.5z"/></svg>
+          </div>
+          <div><strong>Windows</strong><span>DownAI Setup 1.0.0.exe</span></div>
+        </a>
+        <a href="#" class="download-card unavailable" data-os="mac" aria-disabled="true">
+          <div class="download-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+          </div>
+          <div><strong>macOS</strong><span>DownAI 1.0.0.dmg</span></div>
+        </a>
+      </div>
+
+      <ol class="install-steps stagger-group reveal">
+        <li class="stagger-item">Download and install for your platform</li>
+        <li class="stagger-item">Open a project — editor works immediately</li>
+        <li class="stagger-item">Purchase a plan to unlock Pro features</li>
+        <li class="stagger-item">Settings → Activate license with your key</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container cta-inner reveal">
+      <div class="cta-copy">
+        <h2>Ready to ship faster?</h2>
+        <p>Download free, upgrade when you need chat, terminal, and git.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="#download" class="btn btn-primary">Download DownAI</a>
+        <a href="#pricing" class="btn btn-ghost">View pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="/" class="footer-brand">
+        <img src="/logo.svg" alt="" width="24" height="24" />
+        <span>DownAI</span>
+      </a>
+      <div class="footer-links">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <p class="copyright">© 2026 DownAI</p>
+    </div>
+  </footer>
+
+  <script src="/prompt-lab.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>

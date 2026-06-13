@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Sales — DownAI</title>
+  <meta name="description" content="Contact the DownAI sales team for Team and Enterprise plans." />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="/logo.svg" alt="" width="28" height="28" />
+        <span>DownAI</span>
+      </a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="/#demo">Product</a>
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/#download">Download</a>
+      </div>
+      <div class="nav-actions">
+        <a href="/#pricing" class="nav-link">Get Pro</a>
+        <a href="/#download" class="nav-cta">Download</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="contact-page">
+    <div class="container contact-container">
+      <div class="contact-intro reveal">
+        <p class="section-label">Contact sales</p>
+        <h1>Tell us about your team</h1>
+        <p class="section-lead">We’ll reply within one business day with pricing, onboarding, and license options.</p>
+      </div>
+
+      <div class="contact-layout reveal reveal-delay">
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <label class="form-field">
+              <span>Full name</span>
+              <input type="text" name="name" required autocomplete="name" placeholder="Jane Developer" />
+            </label>
+            <label class="form-field">
+              <span>Work email</span>
+              <input type="email" name="email" required autocomplete="email" placeholder="you@company.com" />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label class="form-field">
+              <span>Company</span>
+              <input type="text" name="company" required autocomplete="organization" placeholder="Acme Inc." />
+            </label>
+            <label class="form-field">
+              <span>Team size</span>
+              <select name="seats" required>
+                <option value="">Select…</option>
+                <option value="5-10">5–10 developers</option>
+                <option value="11-25">11–25 developers</option>
+                <option value="26-100">26–100 developers</option>
+                <option value="100+">100+ developers</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="form-field">
+            <span>Plan interest</span>
+            <select name="plan" id="plan-select" required>
+              <option value="team">Team — $49/seat/mo</option>
+              <option value="enterprise">Enterprise — custom</option>
+            </select>
+          </label>
+
+          <label class="form-field">
+            <span>How can we help?</span>
+            <textarea name="message" rows="5" required placeholder="Tell us about your workflow, security needs, or rollout timeline…"></textarea>
+          </label>
+
+          <p class="form-error hidden" id="form-error"></p>
+
+          <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Send message</button>
+          <p class="form-note">Opens your email app with a pre-filled message to our sales team. You can edit before sending.</p>
+        </form>
+
+        <aside class="contact-aside">
+          <div class="contact-card">
+            <h3>Direct email</h3>
+            <p><a href="mailto:sales@downai.dev">sales@downai.dev</a></p>
+            <p class="contact-card-hint">Team plans, billing, and volume licensing</p>
+          </div>
+          <div class="contact-card">
+            <h3>Enterprise</h3>
+            <p><a href="mailto:enterprise@downai.dev">enterprise@downai.dev</a></p>
+            <p class="contact-card-hint">SSO, SLA, on-prem, and security reviews</p>
+          </div>
+          <div class="contact-card">
+            <h3>Support</h3>
+            <p><a href="mailto:support@downai.dev">support@downai.dev</a></p>
+            <p class="contact-card-hint">Existing customers & technical help</p>
+          </div>
+        </aside>
+      </div>
+
+      <div class="contact-success hidden" id="contact-success">
+        <div class="success-icon">✓</div>
+        <h2>Message ready to send</h2>
+        <p>Your email app should open with everything filled in. If it didn’t, use the button below.</p>
+        <button type="button" class="btn btn-primary" id="open-mail-btn">Open in email app</button>
+        <button type="button" class="btn btn-ghost" id="copy-mail-btn">Copy message</button>
+        <a href="/" class="legal-back">← Back to DownAI</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="/" class="footer-brand">
+        <img src="/logo.svg" alt="" width="24" height="24" />
+        <span>DownAI</span>
+      </a>
+      <div class="footer-links">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <p class="copyright">© 2026 DownAI</p>
+    </div>
+  </footer>
+
+  <script src="/contact.js"></script>
+</body>
+</html>

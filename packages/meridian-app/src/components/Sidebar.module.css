@@ -1,0 +1,184 @@
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--bg-chrome);
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.workspaceHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 8px 4px 4px;
+}
+
+.sectionToggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.sectionToggle:hover {
+  color: var(--text-primary);
+}
+
+.sectionToggle svg.collapsed {
+  transform: rotate(-90deg);
+}
+
+.projectName {
+  padding: 2px 20px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.headerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+}
+
+.headerActions {
+  display: flex;
+  gap: 2px;
+}
+
+.sidebar:hover .headerBtn {
+  opacity: 1;
+}
+
+.headerBtn:hover {
+  color: var(--text-secondary);
+}
+
+.tree {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 8px;
+}
+
+.treeItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: calc(100% - 8px);
+  margin: 0 4px;
+  height: 22px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: left;
+  border-radius: var(--radius-sm);
+}
+
+.treeItem:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.treeItem.active {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.treeItem.highlighted {
+  outline: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.itemName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.folderIcon {
+  color: #8b8b8b;
+  flex-shrink: 0;
+}
+
+.contextMenu {
+  position: fixed;
+  z-index: 1000;
+  min-width: 180px;
+  padding: 4px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.contextMenu button {
+  display: block;
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 12px;
+  text-align: left;
+  color: var(--text-secondary);
+  border-radius: 4px;
+}
+
+.contextMenu button:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.contextMenu button.danger:hover {
+  color: #f48771;
+}
+
+.pinnedSection {
+  padding: 4px 8px 8px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.pinnedLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+
+.pinnedItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.pinnedItem:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}

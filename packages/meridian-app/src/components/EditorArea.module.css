@@ -1,0 +1,113 @@
+.area {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+.tabs {
+  display: flex;
+  background: var(--tab-inactive-bg);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow-x: auto;
+  flex-shrink: 0;
+  height: var(--tab-height);
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  height: var(--tab-height);
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--tab-inactive-bg);
+  white-space: nowrap;
+  min-width: 0;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.tab:hover {
+  color: var(--text-secondary);
+}
+
+.activeTab {
+  color: var(--text-primary);
+  background: var(--tab-active-bg);
+}
+
+.tabName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+.dirtyDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.tabClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+  flex-shrink: 0;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+}
+
+.tab:hover .tabClose,
+.activeTab .tabClose {
+  opacity: 0.6;
+}
+
+.tabClose:hover {
+  opacity: 1;
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.editorWrap {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.editorWrap.split {
+  flex-direction: row;
+}
+
+.pane {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.editorWrap.split .pane:first-child {
+  border-right: 1px solid var(--border-subtle);
+}
+
+.splitTab {
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+.splitClose {
+  margin-left: auto;
+  margin-right: 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 4px 8px;
+}
+
+.splitClose:hover {
+  color: var(--text-primary);
+}

@@ -1,0 +1,137 @@
+.screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  position: relative;
+  overflow-y: auto;
+  padding: 48px 24px 64px;
+}
+
+.content {
+  width: 100%;
+  max-width: 640px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.brandName {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-bright);
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.dot {
+  margin: 0 8px;
+  opacity: 0.4;
+}
+
+.proLink, .settingsLink {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.proLink:hover, .settingsLink:hover {
+  color: var(--text-secondary);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-tertiary);
+}
+
+.action:hover:not(:disabled) {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+  border-color: var(--border);
+}
+
+.action:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.recents {
+  width: 100%;
+}
+
+.recentsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.viewAll {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.viewAll:hover {
+  color: var(--text-secondary);
+}
+
+.recentsList {
+  list-style: none;
+}
+
+.recentItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 6px 10px;
+  text-align: left;
+  border-radius: var(--radius-sm);
+}
+
+.recentItem:hover {
+  background: var(--bg-hover);
+}
+
+.recentItem:hover .recentName {
+  color: var(--text-primary);
+}
+
+.recentName {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.recentPath {
+  font-size: 12px;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 55%;
+}

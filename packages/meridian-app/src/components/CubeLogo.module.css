@@ -1,0 +1,4 @@
+.cube {
+  color: var(--text-bright);
+  flex-shrink: 0;
+}

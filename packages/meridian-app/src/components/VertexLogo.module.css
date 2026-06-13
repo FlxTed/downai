@@ -1,0 +1,17 @@
+.logo {
+  flex-shrink: 0;
+  display: block;
+  aspect-ratio: 1;
+}
+
+.right {
+  fill: #525252;
+}
+
+.left {
+  fill: #9a9a9a;
+}
+
+.top {
+  fill: #ececec;
+}

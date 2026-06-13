@@ -1,0 +1,193 @@
+.panel {
+  width: var(--sidebar-width);
+  background: var(--bg-chrome);
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px 4px;
+}
+
+.headerTitle {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.inputWrap {
+  display: flex;
+  gap: 4px;
+  padding: 8px 12px;
+}
+
+.input {
+  flex: 1;
+  padding: 4px 8px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  outline: none;
+  font-size: 13px;
+}
+
+.searchBtn {
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--bg-hover);
+  border-radius: var(--radius-sm);
+}
+
+.results {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 8px);
+  margin: 0 4px;
+  padding: 6px 10px;
+  text-align: left;
+  border-radius: var(--radius-sm);
+}
+
+.result:hover {
+  background: var(--bg-hover);
+}
+
+.resultPath {
+  font-size: 12px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.resultPreview {
+  font-size: 11px;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hint {
+  padding: 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.options {
+  display: flex;
+  gap: 12px;
+  padding: 0 12px 8px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.gitSection {
+  margin-bottom: 12px;
+}
+
+.gitSectionTitle {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.gitFile {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: calc(100% - 8px);
+  margin: 0 4px;
+  padding: 4px 8px;
+  text-align: left;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+}
+
+.gitFile:hover {
+  background: var(--bg-hover);
+}
+
+.gitStatus {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  min-width: 18px;
+}
+
+.gitActions {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.gitAction {
+  font-size: 10px;
+  padding: 2px 6px;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+}
+
+.gitAction:hover {
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+}
+
+.commitBox {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.commitInput {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 13px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.commitBtn {
+  width: 100%;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-radius: 6px;
+}
+
+.commitBtn:disabled {
+  opacity: 0.5;
+}
+
+.initBtn {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--bg-hover);
+  border-radius: 6px;
+  margin: 8px 12px;
+}

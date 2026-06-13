@@ -1,0 +1,29 @@
+{
+  "name": "downai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DownAI — code editor",
+  "scripts": {
+    "dev": "npm run dev --workspace=downai-app",
+    "build": "npm run build --workspace=downai-app",
+    "build:exe": "npm run build:exe --workspace=downai-app",
+    "build:mac": "npm run build:mac --workspace=downai-app",
+    "website": "npm run dev --workspace=downai-website",
+    "website:build": "npm run build --workspace=downai-website",
+    "website:build:cf": "npm run build:cf --workspace=downai-website",
+    "website:build:vercel": "npm run sync-downloads && npm run website:build",
+    "website:deploy": "vercel deploy --prod --yes",
+    "sync-downloads": "node scripts/sync-downloads.mjs",
+    "sync-downloads:cf": "node scripts/sync-downloads.mjs --cloudflare",
+    "release": "npm run icons && npm run build:exe && npm run sync-downloads && npm run website:build",
+    "api": "npm run dev --workspace=downai-api",
+    "icons": "node scripts/generate-icons.mjs"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "sharp": "^0.33.5",
+    "to-ico": "^1.1.5"
+  }
+}

@@ -1,0 +1,8 @@
+packages/meridian-app/release/**
+packages/meridian-app/node_modules/**
+packages/meridian-website/node_modules/**
+**/*.exe
+**/*.dmg
+**/*.msi
+!packages/meridian-website/public/downloads/DownAI-Setup-*.exe
+!packages/meridian-website/public/downloads/DownAI-*.dmg

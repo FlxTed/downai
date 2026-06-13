@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-06-13T18:19:58.774Z",
+  "files": [
+    {
+      "id": "windows",
+      "label": "Windows",
+      "filename": "DownAI-Setup-1.0.0.exe",
+      "url": "/downloads/DownAI-Setup-1.0.0.exe",
+      "external": false,
+      "size": 78285646,
+      "sizeLabel": "74.7 MB",
+      "platform": "Windows 10/11 · 64-bit"
+    },
+    {
+      "id": "mac",
+      "label": "macOS",
+      "filename": "DownAI-1.0.0.dmg",
+      "url": "https://downai.vercel.app/downloads/DownAI-1.0.0.dmg",
+      "external": true,
+      "size": 0,
+      "sizeLabel": "—",
+      "platform": "macOS 11+ · Apple Silicon & Intel"
+    }
+  ]
+}

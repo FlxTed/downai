@@ -1,0 +1,49 @@
+.bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--activity-bar-width);
+  background: var(--bg-chrome);
+  border-right: 1px solid var(--border-subtle);
+  padding: 4px 0;
+  flex-shrink: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--text-muted);
+  position: relative;
+  border-radius: var(--radius-sm);
+  margin: 2px 0;
+}
+
+.item:hover:not(:disabled) {
+  color: var(--text-secondary);
+}
+
+.item.active {
+  color: var(--text-bright);
+}
+
+.item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: var(--text-bright);
+}
+
+.item:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.spacer {
+  flex: 1;
+}

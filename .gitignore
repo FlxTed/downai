@@ -1,0 +1,15 @@
+node_modules/
+dist/
+dist-electron/
+release/
+*.log
+.DS_Store
+Thumbs.db
+.env
+.env.local
+.vercel/
+packages/meridian-website/dist/
+packages/meridian-app/dist/
+packages/meridian-app/dist-electron/
+packages/meridian-website/public/downloads/*.exe
+packages/meridian-website/public/downloads/*.dmg

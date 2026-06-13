@@ -1,0 +1,67 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--status-bar-height);
+  background: var(--status-bg);
+  color: var(--status-text);
+  border-top: 1px solid var(--status-border);
+  padding: 0 10px;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.bar.welcome {
+  background: var(--bg-chrome);
+  color: var(--text-muted);
+}
+
+.left, .right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.item {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.planBadge {
+  font-size: 11px;
+  padding: 2px 8px;
+  background: var(--bg-hover);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+}
+
+.planBadge.pro {
+  color: var(--text-primary);
+}
+
+.collabBadge {
+  font-size: 11px;
+  padding: 2px 8px;
+  background: rgba(110, 231, 160, 0.12);
+  border: 1px solid rgba(110, 231, 160, 0.25);
+  border-radius: var(--radius-sm);
+  color: #6ee7a0;
+  letter-spacing: 0.04em;
+}
+
+.errorCount {
+  color: #f87171;
+  margin-right: 8px;
+}
+
+.warningCount {
+  color: #fbbf24;
+}
