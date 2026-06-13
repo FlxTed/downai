@@ -113,7 +113,7 @@ const files = [];
 
 
 
-if (windowsFile || windowsOverride) {
+if (windowsFile || windowsOverride || existsSync(destPath)) {
 
   const stat = windowsFile ? statSync(windowsFile) : (existsSync(destPath) ? statSync(destPath) : null);
 
@@ -165,13 +165,13 @@ if (windowsFile || windowsOverride) {
 
 
 
-if (macSource || macOverride) {
+const macExt = macSource?.endsWith('.zip') ? 'zip' : 'dmg';
+const macDestName = `DownAI-${version}.${macExt}`;
+const macDestPath = join(destDir, macDestName);
 
-  const ext = macSource?.endsWith('.zip') ? 'zip' : 'dmg';
+if (macSource || macOverride || existsSync(macDestPath)) {
 
-  const destName = `DownAI-${version}.${ext}`;
-
-  const macDestPath = join(destDir, destName);
+  const destName = macDestName;
 
   const stat = macSource
     ? statSync(macSource)
