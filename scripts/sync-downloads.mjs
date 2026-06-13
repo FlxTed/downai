@@ -105,7 +105,7 @@ const windowsFile = windowsSource || windowsExisting;
 
 const macSource =
   findFile(releaseDir, (n) => n.endsWith('.dmg') && /downai/i.test(n)) ||
-  findFile(releaseDir, (n) => n.endsWith('.zip') && /downai/i.test(n));
+  findFile(releaseDir, (n) => n.endsWith('.zip') && /^DownAI-/i.test(n));
 
 
 
@@ -171,9 +171,18 @@ if (macSource || macOverride) {
 
   const destName = `DownAI-${version}.${ext}`;
 
-  const stat = macSource ? statSync(macSource) : null;
+  const macDestPath = join(destDir, destName);
 
-  const { url, external } = resolveUrl(destName, macOverride, macSource);
+  const stat = macSource
+    ? statSync(macSource)
+    : existsSync(macDestPath)
+      ? statSync(macDestPath)
+      : null;
+
+  const useLocal = macSource || (stat && !macOverride);
+  const { url, external } = useLocal
+    ? resolveUrl(destName, '', macSource)
+    : resolveUrl(destName, macOverride, macSource);
 
 
 
@@ -193,7 +202,7 @@ if (macSource || macOverride) {
 
     sizeLabel: stat ? formatBytes(stat.size) : '—',
 
-    platform: 'macOS 11+ · Apple Silicon & Intel',
+    platform: 'macOS 11+ · Apple Silicon (M1/M2/M3)',
 
   });
 

@@ -2,12 +2,6 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "npm ci --ignore-scripts",
   "buildCommand": "node scripts/prepare-vercel-build.mjs && npm run sync-downloads && npm run website:build",
-  "build": {
-    "env": {
-      "DOWNAI_WINDOWS_DOWNLOAD_URL": "https://downai.vercel.app/downloads/DownAI-Setup-1.0.0.exe",
-      "DOWNAI_MAC_DOWNLOAD_URL": "https://downai.vercel.app/downloads/DownAI-1.0.0.dmg"
-    }
-  },
   "outputDirectory": "packages/meridian-website/dist",
   "framework": null,
   "rewrites": [

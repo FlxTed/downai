@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-06-13T18:19:58.774Z",
+  "updatedAt": "2026-06-13T18:39:17.792Z",
   "files": [
     {
       "id": "windows",
@@ -16,11 +16,11 @@
       "id": "mac",
       "label": "macOS",
       "filename": "DownAI-1.0.0.dmg",
-      "url": "https://downai.vercel.app/downloads/DownAI-1.0.0.dmg",
-      "external": true,
-      "size": 0,
-      "sizeLabel": "—",
-      "platform": "macOS 11+ · Apple Silicon & Intel"
+      "url": "/downloads/DownAI-1.0.0.dmg",
+      "external": false,
+      "size": 104389659,
+      "sizeLabel": "99.6 MB",
+      "platform": "macOS 11+ · Apple Silicon (M1/M2/M3)"
     }
   ]
 }
