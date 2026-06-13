@@ -15,7 +15,10 @@
     "website:deploy": "vercel deploy --prod --yes",
     "sync-downloads": "node scripts/sync-downloads.mjs",
     "sync-downloads:cf": "node scripts/sync-downloads.mjs --cloudflare",
+    "fetch-mac-installer": "node scripts/fetch-mac-installer.mjs",
+    "fetch-mac-installer:deploy": "node scripts/fetch-mac-installer.mjs --deploy",
     "release": "npm run icons && npm run build:exe && npm run sync-downloads && npm run website:build",
+    "release:deploy": "npm run sync-downloads && npm run website:deploy",
     "api": "npm run dev --workspace=downai-api",
     "icons": "node scripts/generate-icons.mjs"
   },

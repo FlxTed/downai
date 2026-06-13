@@ -169,6 +169,8 @@
           ? 'Installers are being prepared. Clone the repo and run npm run release to build locally.'
           : `${labels[missing[0]]} installer coming soon — ${missing[0] === 'mac' ? 'build on a Mac with npm run build:mac, then npm run sync-downloads && npm run website:deploy' : 'build with npm run build:exe from repo root'}.`;
         noticeEl.classList.remove('hidden');
+      } else if (noticeEl) {
+        noticeEl.classList.add('hidden');
       }
     } catch {
       if (noticeEl) {
